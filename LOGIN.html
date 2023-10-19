@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Login & Registration Page</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <style>
+    .container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+      max-width: 400px;
+      margin: 0 auto;
+      height: 250px;
+      width: 320x;
+      padding: 20px;
+      border-radius: 5px;
+      background:
+                linear-gradient(
+                    135deg,
+                      #fff,
+                    #f3f3f3 40%,
+                    #ddd 50%,
+                    #aaa 50%,
+                    #bbb 56%,
+                    #ccc 62%,
+                    #f3f3f3 80%,
+                    #fff 100%
+                );
+               
+    }
+    
+/* Apply styles to form containers */
+.form-container {
+  padding: 20px;
+  height: auto;
+  border: 3px solid #1092dd;
+  border-radius: 5px;
+  background-color: #b9b995;
+}
+
+/* Apply styles to form headings */
+h2 {
+  text-align: center;
+}
+
+/* Apply styles to form elements */;
+ .login-form {
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
+  }  
+  button[type="submit"] {
+  display: block;
+  margin: 10 auto;
+  padding: 10px 20px;
+  background-color: #4caf50;
+  color: rgb(red, green, blue);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+  
+
+button[type="submit"]:hover {
+  background-color: #45a049;
+  
+}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="form-container">
+      <!-- Login Form -->
+      <form id="login-form">
+        <h2>Login</h2>
+        <input type="text" id="login-username" placeholder="Username" required><br>
+        <input type="password" id="login-password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+    </div>
+  </div>
+</body>
+</html>
