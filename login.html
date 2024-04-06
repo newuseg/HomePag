@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'poppins', sans-serif;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            background-image: url('login.jpg');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .section {
+            position: relative;
+            max-width: 400px;
+            background-color: transparent;
+            border-radius: 20px;
+            backdrop-filter: blur(4px);
+            border: 1px solid whitesmoke;
+            padding: 2rem 3rem;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: #fff;
+            text-align: center;
+        }
+
+        .inputbox {
+            position: relative;
+            margin: 30px 0;
+            max-width: 310px;
+            border-bottom: 2px solid #fff;
+        }
+
+        .inputbox label {
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transform: translateY(-50%);
+            color: #fff;
+            font-size: 1rem;
+            pointer-events: none;
+            transition: all 0.5s ease-in-out;
+        }
+
+        input:focus~label,
+        input:valid~label {
+            top: -5px;
+        }
+
+        .inputbox input {
+            width: 100%;
+            height: 60px;
+            background: transparent;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            padding: 0 35px 0 5px;
+            color: #fff;
+        }
+
+        .inputbox ion-icon {
+            position: absolute;
+            right: 8px;
+            color: #fff;
+            font-size: 1.2rem;
+            top: 20px;
+        }
+
+        .forget {
+            margin: 35px 0;
+            font-size: 0.85rem;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .forget label {
+            display: flex;
+            align-items: center;
+        }
+
+        .forget label input {
+            margin-right: 3px;
+        }
+
+        .forget a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .forget a:hover {
+            text-decoration: underline;
+        }
+
+        button {
+            width: 100%;
+            height: 40px;
+            border-radius: 50px;
+            background-color: rgb(255, 255, 255, 1);
+            border: none;
+            outline: none;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: all 0.4s ease;
+        }
+
+        button:hover {
+            background-color: rgba(255, 255, 255, 0.5);
+        }
+
+        button:active {
+            scale: .97;
+        }
+
+        .register {
+            font-size: 0.9rem;
+            color: #fff;
+            text-align: center;
+            margin: 25px 0 10px;
+        }
+
+        .register p {
+            margin: 10px;
+        }
+
+        .register p a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: 600;
+        }
+
+        .register p a:hover {
+            text-decoration: underline;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="section">
+        <form action="">
+            <div id="loginForm" class="login">
+                <h1>Login</h1>
+                <div class="inputbox">
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <input type="email" required>
+                    <label for="">Email</label>
+                </div>
+                <div class="inputbox">
+                    <ion-icon name="lock-closed-outline"></ion-icon>
+                    <input type="password" required>
+                    <label for="">Password</label>
+                </div>
+                <div class="forget">
+                    <label for=""><input type="checkbox" required>Remember Me</label>
+                    <a id="registerToggle" onclick="toggleForm('forget')" href="#">Forget Password</a>
+                </div>
+                <button onclick="notificationLogin()">Log in</button>
+                <div class="register">
+                    <p>Don't have a account? <a id="registerToggle" onclick="toggleForm('register')"
+                            href="#">Register</a>
+                </div>
+            </div>
+
+            <div id="registerForm" class="register">
+                <h1>Register</h1>
+                <div class="inputbox">
+                    <input type="email" required>
+                    <label for="">Email</label>
+                </div>
+                <div class="inputbox">
+                    <input type="text" pattern="[0-9]*" required>
+                    <label for="">Mobile No.</label>
+                </div>
+                <div class="inputbox">
+                    <input type="password" required>
+                    <label for="">Password</label>
+                </div>
+                <div class="forget">
+                    <label for=""><input type="checkbox" required>Remember Me</label>
+                    <a id="registerToggle" onclick="toggleForm('forget')" href="#">Forget Password</a>
+                </div>
+                <button type="submit">Register</button>
+                <div class="register">
+                    <p>i have already an account <a id="loginToggle" onclick="toggleForm('login')" href="#">Login</a>
+                    </p>
+                </div>
+            </div>
+
+            <div id="forget" class="forget">
+                <h1>Forget Password</h1>
+                <div class="inputbox">
+                    <input type="email">
+                    <label for="">Email</label>
+                </div>
+                <div class="forget">
+                    <label for=""><input type="checkbox" required>Remember Me</label>
+                </div>
+                <button type="submit">Sent OTP</button>
+                <div class="register">
+                    <p>Don't have a account? <a id="registerToggle" onclick="toggleForm('register')"
+                            href="#">Register</a>
+                    </p>
+                    <p>i have already an account <a id="loginToggle" onclick="toggleForm('login')" href="#">Login</a>
+                    </p>
+                </div>
+            </div>
+
+        </form>
+    </div>
+    <script>
+        function toggleForm(formType) {
+            const loginForm = document.getElementById('loginForm');
+            const registerForm = document.getElementById('registerForm');
+            const forget = document.getElementById('forget');
+
+            if (formType === 'login') {
+                loginForm.style.display = 'block';
+                registerForm.style.display = 'none';
+                forget.style.display = 'none';
+            }
+            else if (formType === 'register') {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'block';
+                forget.style.display = 'none';
+            }
+            else if (formType === 'forget') {
+                loginForm.style.display = 'none';
+                registerForm.style.display = 'none';
+                forget.style.display = 'block';
+            }
+        }
+
+        document.getElementById('loginToggle').click();
+
+        function showNotification(message) {
+            if(Notification.permission !== "granted") {
+                Notification.requestPermission().then(function(result) {
+                    if(result === "granted") {
+                        new Notification("Login Form", { body: message });
+                    }
+                });
+            } else {
+                new Notification("Login Form", { body: message });
+            }
+            
+        }
+    </script>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

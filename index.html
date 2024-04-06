@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            height: 100vh;
+            margin-left: -10px;
+            background-color: #b3b0b0;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            margin-top: -18px;
+        }
+
+        /* Navbar staring.-----------------------------------*/
+        .navbar {
+            height: 100vh;
+            width: 0;
+            background-color: #333;
+            position: fixed;
+            top: 0;
+            left: 0;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+            z-index: 0;
+        }
+
+        /* Navbar JavaScript....*/
+        .navs {
+            width: 130px;
+        }
+
+        .navbar a {
+            color: yellow;
+            padding: 15px;
+            text-decoration: none;
+            font-size: 20px;
+            display: block;
+            transition: all .5s;
+        }
+
+        .navbar a:hover {
+            color: rgb(93, 230, 93);
+            /* Navbar is ended..............................*/
+        }
+
+        /* Toggle Designing start.-----------------------------*/
+        .tog {
+            width: 100%;
+            height: 60px;
+            cursor: pointer;
+            background-color: greenyellow;
+            border-radius: 5px;
+            z-index: 1;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        a{
+            text-decoration: none;
+        }
+        .tog .enter{
+            position: absolute;
+            right: 10px;
+            top: 30%;
+            font-weight: bold;
+        }
+        .tog .login {
+            right: 100px;
+            top: 30%;
+        }
+
+        .box {
+            width: 35px;
+            padding: 5px;
+            margin: 10px 10px;
+        }
+
+        /*
+        .box:focus{
+            margin-left: 100px;
+            background-color: rgb(33, 196, 27);
+        }*/
+        .tog span {
+            display: block;
+            height: 3px;
+            width: 25px;
+            background-color: rgb(214, 28, 143);
+            margin: 5px;
+            transition: .4s;
+        }
+
+        .js .line1 {
+            transform: translate(5%, 300%) rotate(-500deg);
+        }
+
+        .js .line2 {
+            transform: scale(0);
+        }
+
+        .js .line3 {
+            transform: translate(5%, -250%) rotate(315deg);
+            /* Toggle Designing End.................................*/
+        }
+
+        /* Paragraph Starting --------------------------------*/
+        .p {
+            margin: 100px 50px 10px 150px;
+            border-radius: 10px;
+            box-shadow: 2px 2px 10px;
+            width: 0;
+            overflow-x: hidden;
+            transition: 0.5s;
+            z-index: 0;
+            background-color: #b3b0b0;
+            color: #2704f1;
+        }
+
+        p {
+            font-weight: bold;
+            font-size: 18px;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .about {
+            padding: 20px;
+            box-shadow: inset 2px 2px 50px rgba(218, 215, 215, 0.171),
+                inset -2px -2px 50px rgba(77, 68, 68, 0.315);
+            width: 70%;
+            /* Paragraph Ended ..............................*/
+        }
+
+        /* Contact Details Starting----------------------------*/
+        .number {
+            width: 0;
+            color: transparent;
+            overflow-x: hidden;
+        }
+
+        .number li a {
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        .num {
+            width: 50%;
+            position: absolute;
+            font-size: 30px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .num li:hover {
+            color: aqua;
+        }
+
+        .num li a:hover {
+            color: red;
+            /* Contact Details Ended.............................*/
+        }
+
+        /* Scroll Button Is Startin---------------------------*/
+        #scrollBtn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #05ce37;
+            color: w;
+            border: navajowhite;
+            border-radius: 5px;
+            padding: 10px 20px;
+            cursor: pointer;
+            transition: opacity .3s ease;
+            opacity: 0;
+            /* Scoll Ended.............................*/
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="tog">
+            <div class="box" onclick="togg()">
+                <span class="line1"></span>
+                <span class="line2"></span>
+                <span class="line3"></span>
+            </div>
+            <div class="enter register">
+                <a href="login.html">Register</a>
+            </div>
+            <div class="enter login">
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+        <div class="navbar">
+            <div class="navv">
+                <a href="#" onclick="home()">HOME</a>
+                <a href="imageToggle.html">GALLERY</a>
+                <a href="#" onclick="about()">ABOUT</a>
+                <a href="#">SERVICE</a>
+                <a href="#" onclick="contact()">CONTACT</a>
+            </div>
+        </div>
+
+    </div>
+    <div class="p">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eligendi sequi aliquam vel assumenda necessitatibus
+            dolor voluptatum quod consectetur expedita ducimus praesentium, nisi earum culpa ullam officia repudiandae.
+            Labore atque commodi expedita nobis aperiam alias ipsum, aliquam, non, doloremque cum accusamus eveniet
+            quae. Quibusdam libero sapiente corporis temporibus doloremque. Numquam doloremque tempora dolor nisi. Illo
+            eligendi voluptates quasi, iste vero consequatur placeat dignissimos alias tempore accusantium unde nobis
+            cum quia ullam voluptatibus autem ipsam praesentium provident? At eius voluptate ipsum, pariatur, vero
+            architecto tempore alias doloremque delectus sequi quas repellendus molestiae labore hic ratione totam
+            molestias libero fugiat laudantium. Quis modi adipisci repellendus atque reprehenderit, amet beatae impedit!
+            Saepe fugit libero nesciunt architecto, natus odit nemo dicta sunt inventore sit facere harum a iusto ipsum
+            in illum vitae quis provident laborum aliquam sint optio delectus. Dolorum quam aliquam harum quis totam,
+            natus quo quod numquam odio possimus quas provident pariatur asperiores? Voluptatem, quas amet excepturi
+            aspernatur cum corporis, aperiam magnam omnis possimus, debitis quos beatae est! Neque nam veritatis nemo
+            quibusdam. Maiores velit architecto rem minima debitis provident eligendi, veritatis deleniti quia corporis.
+            Omnis, explicabo! Quibusdam incidunt tempora, ipsum ullam explicabo magni error quas inventore veniam?
+            Voluptatibus velit quisquam dolore eius.</p>
+    </div>
+    <div class="number">
+        <li><a href="https://wa.me/+916205283108">Whatsapp</a></li>
+        <li><a href="tel:+916205283108">Call</a></li>
+        <li><a href="sms:+916205283108">Message</a></li>
+    </div>
+    <button id="scrollBtn" title="Go to top">Top</button>
+
+    <script>
+        function togg() {
+            let navbar = document.querySelector('.navbar');
+            navbar.classList.toggle("navs")
+            var box = document.querySelector('.box');
+            box.classList.toggle('js');
+        }
+
+        // Onclick Function ........................
+        function about() {
+            let navbar = document.querySelector('.p');
+            navbar.classList.toggle("about")
+            /* if (contact === true){
+                 return about();
+             }*/
+        }
+        function contact() {
+            let navbar = document.querySelector('.number');
+            navbar.classList.toggle("num")
+        }
+        function home() {
+            location.reload();  // reload the current page...
+        }
+
+        // Scrolling Funtion ......................
+        window.addEventListener("scroll", function () {
+            scrollBtn.style.opacity =
+                (window.scrollY > 20) ? "1" : "0";
+        });
+        window.addEventListener("click", function () {
+            window.scroll({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
+</body>
+
+</html>
